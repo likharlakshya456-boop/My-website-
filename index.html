@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Maison Noire — Luxury fashion brand. Where restraint becomes the ultimate luxury." />
+  <meta name="keywords" content="luxury fashion, designer clothing, Maison Noire, SS25, editorial fashion" />
+  <title>MAISON NOIRE — Luxury Fashion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Karla:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<!-- ===================================================
+     CART PANEL + OVERLAY
+=================================================== -->
+<div id="cart-overlay" class="cart-overlay"></div>
+<aside id="cart-panel" class="cart-panel" role="dialog" aria-label="Shopping bag">
+  <div class="cart-panel-head">
+    <h3>Your Bag</h3>
+    <button id="cart-close" class="cart-close" aria-label="Close cart">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+  </div>
+
+  <div id="cart-items" class="cart-items"></div>
+
+  <div id="cart-empty" class="cart-empty" style="display:flex">
+    <svg width="52" height="52" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+      <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+      <line x1="3" y1="6" x2="21" y2="6"/>
+      <path d="M16 10a4 4 0 0 1-8 0"/>
+    </svg>
+    <p>Your bag is empty</p>
+    <span class="body-sm">Discover our collection</span>
+  </div>
+
+  <div class="cart-footer">
+    <div class="cart-subtotal">
+      <span>Subtotal</span>
+      <span class="total-price" id="cart-total">€ 0.00</span>
+    </div>
+    <div class="cart-actions">
+      <button id="cart-checkout" class="btn btn-primary">Proceed to Checkout</button>
+      <button id="cart-clear" class="btn btn-ghost">Clear Bag</button>
+    </div>
+  </div>
+</aside>
+
+<!-- ===================================================
+     NAVIGATION
+=================================================== -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <a href="index.html" class="nav-logo">MAISON<em>NOIRE</em></a>
+
+    <ul class="nav-links">
+      <li><a href="index.html"      class="nav-link active">Home</a></li>
+      <li><a href="collection.html" class="nav-link">Collection</a></li>
+      <li><a href="about.html"      class="nav-link">About</a></li>
+      <li><a href="contact.html"    class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <button class="dark-toggle" aria-label="Toggle dark mode">
+        <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+        <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <circle cx="12" cy="12" r="5"/>
+          <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+          <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+      </button>
+      <button class="cart-btn" aria-label="Open shopping bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <span class="cart-badge" id="cart-badge-nav">0</span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile Drawer -->
+<div class="mobile-drawer" id="mobile-drawer">
+  <a href="index.html"      class="mob-nav-link">Home</a>
+  <a href="collection.html" class="mob-nav-link">Collection</a>
+  <a href="about.html"      class="mob-nav-link">About</a>
+  <a href="contact.html"    class="mob-nav-link">Contact</a>
+  <div class="mobile-drawer-footer">
+    <span class="label">SS25 Collection</span>
+    <button class="dark-toggle" aria-label="Toggle dark mode">
+      <svg class="icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+      <svg class="icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- ===================================================
+     TICKER
+=================================================== -->
+<div class="ticker-bar" style="margin-top: var(--nav-h);">
+  <div class="ticker-track">
+    <span>Free Shipping Over €150</span><span class="sep">·</span>
+    <span>New SS25 Arrivals</span><span class="sep">·</span>
+    <span>Complimentary Gift Wrapping</span><span class="sep">·</span>
+    <span>Free Returns — 30 Days</span><span class="sep">·</span>
+    <span>Ethically Sourced Materials</span><span class="sep">·</span>
+    <span>Free Shipping Over €150</span><span class="sep">·</span>
+    <span>New SS25 Arrivals</span><span class="sep">·</span>
+    <span>Complimentary Gift Wrapping</span><span class="sep">·</span>
+    <span>Free Returns — 30 Days</span><span class="sep">·</span>
+    <span>Ethically Sourced Materials</span><span class="sep">·</span>
+  </div>
+</div>
+
+<!-- Remove margin-top on ticker since we have it inline, fix the hero -->
+<style>
+  .ticker-bar { margin-top: 0 !important; }
+  .hero { margin-top: 0; }
+</style>
+
+<!-- ===================================================
+     HERO SECTION
+=================================================== -->
+<section class="hero" id="home" style="margin-top: calc(var(--nav-h) + 36px);">
+  <div class="hero-media">
+    <img src="images/hero-banner.jpg"
+         alt="SS25 Campaign — Maison Noire"
+         style="transition: transform 10s ease, opacity .5s;" />
+    <div class="hero-grad"></div>
+  </div>
+
+  <div class="hero-content">
+    <p class="hero-eyebrow reveal">SS 2025 — New Season</p>
+    <h1 class="hero-title reveal stagger-1">
+      Dressed<br /><em>in</em><br />Silence.
+    </h1>
+    <p class="hero-sub reveal stagger-2">
+      Where restraint becomes the ultimate luxury. Crafted for those who speak through form, not volume.
+    </p>
+    <div class="hero-ctas reveal stagger-3">
+      <a href="collection.html" class="btn btn-ghost-light">Shop Collection</a>
+      <a href="about.html"      class="btn" style="background:transparent;color:rgba(255,255,255,.6);border-color:transparent;padding-left:0;">Our Story →</a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <div class="hero-scroll-line"></div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FEATURED COLLECTION
+=================================================== -->
+<section class="section-py" id="collection" style="background: var(--bg);">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">Curated Selection</p>
+      <h2 class="display-md">Featured <em>Collection</em></h2>
+    </div>
+
+    <div class="featured-grid">
+
+      <!-- Card 1 -->
+      <article class="product-card reveal stagger-1"
+               data-product-id="prod-001"
+               data-name="Oversized Linen Coat"
+               data-price="385"
+               data-size="One Size"
+               data-image="images/product1.jpg"
+               data-category="women">
+        <div class="product-card-img-wrap">
+          <img src="images/product1.jpg" alt="Oversized Linen Coat" loading="lazy" />
+          <span class="product-card-badge new">New</span>
+          <div class="product-card-actions">
+            <a href="product.html" class="btn btn-ghost-light" style="font-size:.6rem;padding:.65rem .9rem;">View</a>
+            <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem .9rem;">Add to Bag</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Outerwear</p>
+          <h3 class="product-name">Oversized Linen Coat</h3>
+          <div class="product-price-row">
+            <span class="product-price">€ 385</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="product-card reveal stagger-2"
+               data-product-id="prod-002"
+               data-name="Silk Bias Slip Dress"
+               data-price="290"
+               data-size="One Size"
+               data-image="images/product2.jpg"
+               data-category="women">
+        <div class="product-card-img-wrap">
+          <img src="images/product2.jpg" alt="Silk Bias Slip Dress" loading="lazy" />
+          <div class="product-card-actions">
+            <a href="product.html" class="btn btn-ghost-light" style="font-size:.6rem;padding:.65rem .9rem;">View</a>
+            <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem .9rem;">Add to Bag</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Dresses</p>
+          <h3 class="product-name">Silk Bias Slip Dress</h3>
+          <div class="product-price-row">
+            <span class="product-price">€ 290</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="product-card reveal stagger-3"
+               data-product-id="prod-003"
+               data-name="Tailored Wide Trousers"
+               data-price="195"
+               data-size="One Size"
+               data-image="images/product3.jpg"
+               data-category="men">
+        <div class="product-card-img-wrap">
+          <img src="images/product3.jpg" alt="Tailored Wide Trousers" loading="lazy" />
+          <span class="product-card-badge sale">Sale</span>
+          <div class="product-card-actions">
+            <a href="product.html" class="btn btn-ghost-light" style="font-size:.6rem;padding:.65rem .9rem;">View</a>
+            <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem .9rem;">Add to Bag</button>
+          </div>
+        </div>
+        <div class="product-card-body">
+          <p class="product-category">Trousers</p>
+          <h3 class="product-name">Tailored Wide Trousers</h3>
+          <div class="product-price-row">
+            <span class="product-price">€ 195</span>
+            <span class="product-price-old">€ 260</span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:3rem;">
+      <a href="collection.html" class="btn btn-ghost">View Full Collection</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     NEW ARRIVALS SLIDER
+=================================================== -->
+<section class="section-py slider-section" style="background: var(--bg-alt);">
+  <div class="container">
+    <div class="slider-header reveal">
+      <div>
+        <p class="label">Just In</p>
+        <h2 class="display-md">New <em>Arrivals</em></h2>
+      </div>
+      <div class="slider-controls">
+        <button class="slider-btn slider-prev" aria-label="Previous">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <polyline points="15 18 9 12 15 6"/>
+          </svg>
+        </button>
+        <button class="slider-btn slider-next" aria-label="Next">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+            <polyline points="9 18 15 12 9 6"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="slider-track-wrap">
+      <div class="slider-track">
+
+        <article class="product-card"
+                 data-product-id="prod-004"
+                 data-name="Merino Turtleneck"
+                 data-price="175"
+                 data-size="One Size"
+                 data-image="images/product4.jpg"
+                 data-category="men">
+          <div class="product-card-img-wrap">
+            <img src="images/product4.jpg" alt="Merino Turtleneck" loading="lazy" />
+            <span class="product-card-badge new">New</span>
+            <div class="product-card-actions">
+              <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem 1rem;width:100%;">Add to Bag</button>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p class="product-category">Knitwear</p>
+            <h3 class="product-name">Merino Turtleneck</h3>
+            <div class="product-price-row"><span class="product-price">€ 175</span></div>
+          </div>
+        </article>
+
+        <article class="product-card"
+                 data-product-id="prod-005"
+                 data-name="Structured Blazer"
+                 data-price="440"
+                 data-size="One Size"
+                 data-image="images/product5.jpg"
+                 data-category="women">
+          <div class="product-card-img-wrap">
+            <img src="images/product5.jpg" alt="Structured Blazer" loading="lazy" />
+            <span class="product-card-badge new">New</span>
+            <div class="product-card-actions">
+              <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem 1rem;width:100%;">Add to Bag</button>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p class="product-category">Blazers</p>
+            <h3 class="product-name">Structured Blazer</h3>
+            <div class="product-price-row"><span class="product-price">€ 440</span></div>
+          </div>
+        </article>
+
+        <article class="product-card"
+                 data-product-id="prod-006"
+                 data-name="Open-Back Crepe Dress"
+                 data-price="320"
+                 data-size="One Size"
+                 data-image="images/product6.jpg"
+                 data-category="women">
+          <div class="product-card-img-wrap">
+            <img src="images/product6.jpg" alt="Open-Back Crepe Dress" loading="lazy" />
+            <div class="product-card-actions">
+              <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem 1rem;width:100%;">Add to Bag</button>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p class="product-category">Dresses</p>
+            <h3 class="product-name">Open-Back Crepe Dress</h3>
+            <div class="product-price-row"><span class="product-price">€ 320</span></div>
+          </div>
+        </article>
+
+        <article class="product-card"
+                 data-product-id="prod-007"
+                 data-name="Cashmere Wrap Coat"
+                 data-price="520"
+                 data-size="One Size"
+                 data-image="images/product7.jpg"
+                 data-category="women">
+          <div class="product-card-img-wrap">
+            <img src="images/product7.jpg" alt="Cashmere Wrap Coat" loading="lazy" />
+            <span class="product-card-badge new">New</span>
+            <div class="product-card-actions">
+              <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem 1rem;width:100%;">Add to Bag</button>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p class="product-category">Outerwear</p>
+            <h3 class="product-name">Cashmere Wrap Coat</h3>
+            <div class="product-price-row"><span class="product-price">€ 520</span></div>
+          </div>
+        </article>
+
+        <article class="product-card"
+                 data-product-id="prod-008"
+                 data-name="Linen Shirt"
+                 data-price="145"
+                 data-size="One Size"
+                 data-image="images/product8.jpg"
+                 data-category="men">
+          <div class="product-card-img-wrap">
+            <img src="images/product8.jpg" alt="Linen Shirt" loading="lazy" />
+            <div class="product-card-actions">
+              <button class="btn btn-gold" data-add-cart style="font-size:.6rem;padding:.65rem 1rem;width:100%;">Add to Bag</button>
+            </div>
+          </div>
+          <div class="product-card-body">
+            <p class="product-category">Shirts</p>
+            <h3 class="product-name">Linen Shirt</h3>
+            <div class="product-price-row"><span class="product-price">€ 145</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     BRAND STORY
+=================================================== -->
+<section class="brand-story" id="about">
+  <div class="brand-story-image reveal-left">
+    <img src="images/hero-banner.jpg" alt="Maison Noire atelier" loading="lazy" />
+  </div>
+  <div class="brand-story-text reveal-right">
+    <p class="label">Our Philosophy</p>
+    <h2 class="display-md">Fashion is<br /><em>Philosophy</em></h2>
+    <p class="body-lg">
+      Maison Noire was born from a single conviction: that true luxury lives
+      in restraint. Founded in Paris in 2009, we create garments that speak
+      in the quietest of voices — and say everything.
+    </p>
+    <p class="body-lg">
+      Each piece is cut from ethically sourced natural fibres, constructed by
+      master artisans, and designed to outlast every fleeting trend.
+    </p>
+    <div class="brand-story-stats">
+      <div class="stat-item">
+        <span class="num">16</span>
+        <span class="desc">Years of Craft</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">42</span>
+        <span class="desc">Countries</span>
+      </div>
+      <div class="stat-item">
+        <span class="num">100%</span>
+        <span class="desc">Natural Fibres</span>
+      </div>
+    </div>
+    <a href="about.html" class="btn btn-primary" style="margin-top:1rem;align-self:flex-start;">Read Our Story</a>
+  </div>
+</section>
+
+<!-- ===================================================
+     EDITORIAL BANNER
+=================================================== -->
+<section style="background:var(--off-black);padding:var(--section-py) var(--gutter);text-align:center;">
+  <div style="max-width:820px;margin-inline:auto;">
+    <p class="reveal" style="font-family:var(--font-display);font-size:clamp(1.6rem,4vw,3rem);font-weight:300;font-style:italic;color:var(--white);line-height:1.45;margin-bottom:1.2rem;">
+      "Elegance is not about being noticed,<br />it is about being remembered."
+    </p>
+    <p class="reveal stagger-1 label" style="color:var(--gold);">— Maison Noire, SS25 Lookbook</p>
+  </div>
+</section>
+
+<!-- ===================================================
+     TESTIMONIALS
+=================================================== -->
+<section class="section-py" style="background:var(--bg);">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">Client Words</p>
+      <h2 class="display-md">What They <em>Say</em></h2>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal stagger-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">The linen coat arrived perfectly packaged. The weight, the drape, the cut — I have never felt so effortlessly elegant. Worth every euro.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">A</div>
+          <div>
+            <p class="testimonial-name">Amélie Fontaine</p>
+            <p class="testimonial-location">Paris, France</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal stagger-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">I wore the Silk Bias Dress to an opening at the Tate and received more compliments than the artwork. Maison Noire understands silence better than anyone.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">S</div>
+          <div>
+            <p class="testimonial-name">Sophia Hartmann</p>
+            <p class="testimonial-location">London, UK</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal stagger-3">
+        <div class="testimonial-stars">★★★★★</div>
+        <div class="testimonial-quote-mark">"</div>
+        <p class="testimonial-text">Three years later, my tailored trousers still look exactly as they did on day one. Clothing built to last a lifetime — this is true sustainability.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-avatar">M</div>
+          <div>
+            <p class="testimonial-name">Maria Lindqvist</p>
+            <p class="testimonial-location">Stockholm, Sweden</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     INSTAGRAM GRID
+=================================================== -->
+<section class="section-py" style="background:var(--bg-alt);padding-bottom:0;">
+  <div class="container">
+    <div class="section-header centered reveal">
+      <p class="label">@maisonnoire</p>
+      <h2 class="display-md">Follow Our <em>World</em></h2>
+    </div>
+  </div>
+  <div class="insta-grid reveal">
+    <div class="insta-item">
+      <img src="images/insta1.jpg" alt="Instagram 1" loading="lazy" />
+      <div class="insta-overlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+          <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+        </svg>
+      </div>
+    </div>
+    <div class="insta-item">
+      <img src="images/insta2.jpg" alt="Instagram 2" loading="lazy" />
+      <div class="insta-overlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+    </div>
+    <div class="insta-item">
+      <img src="images/insta3.jpg" alt="Instagram 3" loading="lazy" />
+      <div class="insta-overlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+    </div>
+    <div class="insta-item">
+      <img src="images/insta4.jpg" alt="Instagram 4" loading="lazy" />
+      <div class="insta-overlay">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+          <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     NEWSLETTER
+=================================================== -->
+<section class="newsletter-section">
+  <div class="container">
+    <div class="newsletter-inner reveal">
+      <p class="label">Stay Connected</p>
+      <h2 class="display-md">Join the <em>Circle</em></h2>
+      <p>Early access to collections, private sales, and dispatches from our atelier.</p>
+      <form class="newsletter-form newsletter-form-el" novalidate>
+        <input type="email" placeholder="Your email address" autocomplete="email" required />
+        <button type="submit" class="btn btn-gold">Subscribe</button>
+      </form>
+      <p class="newsletter-note">No spam. Unsubscribe at any time.</p>
+      <p class="newsletter-success">Thank you — welcome to Maison Noire.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     FOOTER
+=================================================== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo">MAISON<em>NOIRE</em></a>
+        <p>Dressed in Silence.</p>
+        <div class="footer-social">
+          <a href="#" class="social-btn" aria-label="Instagram">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r=".5" fill="currentColor"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="Pinterest">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M12 2C6.48 2 2 6.48 2 12c0 4.24 2.65 7.86 6.39 9.29-.09-.78-.17-1.98.04-2.83.18-.77 1.22-5.15 1.22-5.15s-.31-.63-.31-1.56c0-1.46.85-2.55 1.9-2.55.9 0 1.33.67 1.33 1.48 0 .9-.58 2.26-.87 3.52-.25 1.05.52 1.9 1.55 1.9 1.86 0 3.29-1.96 3.29-4.79 0-2.5-1.8-4.25-4.37-4.25-2.98 0-4.73 2.23-4.73 4.54 0 .9.35 1.86.78 2.39.09.1.1.19.07.3-.08.33-.26 1.05-.3 1.2-.05.19-.16.23-.38.14C7.2 19.1 6 16.6 6 14.16c0-3.51 2.55-6.74 7.36-6.74 3.86 0 6.86 2.75 6.86 6.42 0 3.83-2.41 6.91-5.76 6.91-1.12 0-2.18-.58-2.54-1.27l-.69 2.57c-.25.96-.93 2.16-1.39 2.89"/>
+            </svg>
+          </a>
+          <a href="#" class="social-btn" aria-label="TikTok">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <nav class="footer-nav-grid">
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <ul>
+            <li><a href="collection.html">New Arrivals</a></li>
+            <li><a href="collection.html">Women</a></li>
+            <li><a href="collection.html">Men</a></li>
+            <li><a href="collection.html">Sale</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Maison</h4>
+          <ul>
+            <li><a href="about.html">Our Story</a></li>
+            <li><a href="about.html">Sustainability</a></li>
+            <li><a href="about.html">Atelier</a></li>
+            <li><a href="about.html">Press</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <ul>
+            <li><a href="#">Size Guide</a></li>
+            <li><a href="#">Shipping & Returns</a></li>
+            <li><a href="#">Care Guide</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:studio@maisonnoire.com">studio@maisonnoire.com</a></li>
+            <li><a href="tel:+33140123456">+33 1 40 12 34 56</a></li>
+            <li>12 Rue du Faubourg,<br />75008 Paris, France</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Maison Noire. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms & Conditions</a>
+        <a href="#">Cookie Settings</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+</body>
+</html>
