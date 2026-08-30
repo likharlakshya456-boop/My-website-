@@ -1,60 +1,869 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Lakshya is a freelance web developer helping ambitious businesses turn ideas into fast, effective websites.">
-  <title>Lakshya — Freelance Web Developer</title>
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Socialkaroo ⚡ — Inbound Lead Generation & Social Growth for Indore Businesses</title>
+  <meta name="description" content="Socialkaroo is Indore's ROI-first social media & lead generation agency. We turn reels, Google Maps, and WhatsApp into daily paying customers for local businesses.">
+  <meta name="keywords" content="social media marketing Indore, lead generation Indore, Google Business Profile Indore, digital agency Indore, Socialkaroo">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Socialkaroo ⚡ — Inbound Leads & Local Growth Agency">
+  <meta property="og:description" content="We don't just post reels. We fill your shop, clinic & WhatsApp with paying customers in Indore.">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Lakshya — Freelance Web Developer">
-  <meta property="og:description" content="Clear, high-performing websites for people and brands ready to grow.">
-  <meta property="og:url" content="https://likharlakshya456-boop.github.io/My-website-/">
-  <meta property="og:image" content="https://likharlakshya456-boop.github.io/My-website-/og-image.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Lakshya — Freelance Web Developer">
-  <meta name="twitter:description" content="Clear, high-performing websites for people and brands ready to grow.">
-  <meta name="twitter:image" content="https://likharlakshya456-boop.github.io/My-website-/og-image.jpg">
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="nav container" aria-label="Main navigation">
-      <a class="logo" href="#top">L<span>.</span></a>
-      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
-      <div class="nav-links">
-        <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact" class="nav-cta">Let's talk <span>↗</span></a>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <span>🚀 <strong>Indore Growth Special:</strong> Get a Free 15-Minute Local Lead & Google Maps Audit for your business</span>
+      <a href="#audit-form" class="announcement-link">Claim Free Audit <span>→</span></a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="site-header" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">Social<span>karoo</span></div>
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#problem" class="nav-link">Why Us</a>
+        <a href="#services" class="nav-link">Services</a>
+        <a href="#system" class="nav-link">90-Day System</a>
+        <a href="#results" class="nav-link">Results</a>
+        <a href="#calculator" class="nav-link">ROI Calculator</a>
+        <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#faq" class="nav-link">FAQ</a>
+        <a href="#audit-form" class="nav-cta-btn mobile-only">Book Free Audit</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="wa-nav-btn">
+          <svg class="wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.772.82 2.79.82 3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.766-5.769-5.766zm9.969 5.828c0 5.523-4.477 10-10 10-1.745 0-3.385-.45-4.819-1.238l-5.181 1.357 1.378-5.045c-.868-1.488-1.378-3.222-1.378-5.074 0-5.523 4.477-10 10-10s10 4.477 10 10z"/></svg>
+          <span>WhatsApp Us</span>
+        </a>
+        <a href="#audit-form" class="nav-cta-btn desktop-only">Get Growth Audit ↗</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </nav>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-copy">
-        <p class="eyebrow"><i></i> Available for freelance projects</p>
-        <h1>I build digital<br><em>experiences</em> that<br>move business forward.</h1>
-        <p class="intro">I'm Lakshya, a freelance web developer and designer. I create clear, high-performing websites for people and brands ready to grow.</p>
-        <div class="hero-actions"><a class="button button-dark" href="#contact">Start a project <span>↗</span></a><a class="text-link" href="#work">See my work <span>↓</span></a></div>
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="hero-glow-1"></div>
+    <div class="hero-glow-2"></div>
+    <div class="hero-container">
+      
+      <div class="hero-badge">
+        <span class="pulse-dot"></span>
+        <span>⚡ Indore's #1 Inbound Lead Generation Partner</span>
       </div>
-      <div class="hero-art" aria-label="Abstract decorative graphic"><div class="orb orb-one"></div><div class="orb orb-two"></div><div class="grid-lines"></div><span class="art-note">DESIGN<br>DEVELOP<br>DELIVER</span></div>
-    </section>
 
-    <div class="proof"><div class="container proof-inner"><span>Trusted approach</span><strong>Strategy</strong><b>×</b><strong>Design</strong><b>×</b><strong>Development</strong><b>×</b><strong>Results</strong></div></div>
+      <h1 class="hero-title">
+        We Don't Just Post Reels.<br>
+        We Fill Your Business With <span class="gradient-text">Paying Customers.</span>
+      </h1>
 
-    <section id="work" class="section container"><div class="section-head"><div><p class="eyebrow">Selected work</p><h2>Made with purpose.</h2></div><p class="section-desc">A few examples of thoughtful digital work built to look good and work hard.</p></div>
-      <div class="projects"><article class="project project-large"><a class="project-link" href="maison-noire/index.html" aria-label="View the Maison Noire live demo"><div class="project-image image-noire"><span>maison<br><b>noire</b></span></div><div class="project-meta"><div><h3>Maison Noire — E-commerce</h3><p>Multi-page site · Cart system · Dark mode · Live demo</p></div><span class="round-arrow">↗</span></div></a></article><article class="project"><div class="project-image image-orange"><span class="sun">✳</span><small>ORIGIN<br>COFFEE CO.</small></div><div class="project-meta"><div><h3>Origin Coffee Co.</h3><p>E-commerce · Art direction</p></div><span class="round-arrow">↗</span></div></article><article class="project"><div class="project-image image-blue"><span>move<br><b>better.</b></span></div><div class="project-meta"><div><h3>Move Better</h3><p>Strategy · Product design</p></div><span class="round-arrow">↗</span></div></article></div>
-    </section>
+      <p class="hero-subtitle">
+        Stop burning money on ₹3,000 Canva graphics that generate zero sales. Socialkaroo builds <strong>Google Maps top-3 rankings, high-converting offer reels, and automated WhatsApp sales funnels</strong> for ambitious Indore businesses.
+      </p>
 
-    <section id="services" class="services"><div class="container"><div class="section-head"><div><p class="eyebrow">What I do</p><h2>From first idea<br>to <em>final launch.</em></h2></div><p class="section-desc">Whether you need a new presence or a better one, I bring clarity to every step.</p></div><div class="service-grid"><div class="service"><span>01</span><h3>Web design</h3><p>Interfaces that feel effortless, reflect your brand, and guide people to take action.</p></div><div class="service"><span>02</span><h3>Web development</h3><p>Fast, responsive and accessible websites built with clean, maintainable code.</p></div><div class="service"><span>03</span><h3>Brand direction</h3><p>A sharper visual identity and a consistent system your business can grow into.</p></div></div></div></section>
+      <div class="hero-cta-group">
+        <a href="#audit-form" class="btn-primary">
+          <span>Book Free 15-Min Growth Audit</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20get%20more%20customer%20leads%20for%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="btn-whatsapp">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+          <span>Chat on WhatsApp</span>
+        </a>
+      </div>
 
-    <section id="about" class="about container"><div><p class="eyebrow">A little about me</p><h2>Good work starts<br>with <em>good questions.</em></h2></div><div class="about-copy"><p>I partner with founders, small teams, and ambitious businesses to turn complex ideas into simple digital experiences.</p><p>My process is collaborative, practical, and focused on making something that creates a real difference—not just another pretty website.</p><a class="text-link" href="#contact">More about my approach <span>↗</span></a></div></section>
+      <!-- Live Metric Badges -->
+      <div class="hero-stats-strip">
+        <div class="stat-card">
+          <div class="stat-number">450+</div>
+          <div class="stat-label">Inbound Leads Delivered / Mo</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number">4.9 ★</div>
+          <div class="stat-label">Average Client Rating</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number">92%</div>
+          <div class="stat-label">90-Day Retention Rate</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-card">
+          <div class="stat-number">100%</div>
+          <div class="stat-label">Transparent Ad Billing</div>
+        </div>
+      </div>
 
-    <section id="contact" class="contact"><div class="container contact-inner"><p class="eyebrow">Have a project in mind?</p><h2>Let's make something<br><em>worth remembering.</em></h2><a class="contact-email" href="mailto:likharlakshya456@gmail.com">likharlakshya456@gmail.com <span>↗</span></a><p class="availability">Usually replies within 1–2 business days.</p></div></section>
-  </main>
-  <footer><div class="container footer-inner"><a class="logo" href="#top">L<span>.</span></a><p>© 2026 Lakshya. Built with intention.</p><div><a href="https://www.linkedin.com/in/lakshya-likhar-691630333" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://github.com/likharlakshya456-boop/My-website-" target="_blank" rel="noreferrer">GitHub ↗</a></div></div></footer>
-  <script>const btn=document.querySelector('.menu-toggle'),links=document.querySelector('.nav-links');btn.addEventListener('click',()=>{const open=links.classList.toggle('open');btn.setAttribute('aria-expanded',open)});links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));</script>
+      <!-- Trust Locality Tags -->
+      <div class="local-trust-tag">
+        <span>Trusted by clinics, salons, cafes & businesses across Indore:</span>
+        <div class="locality-pills">
+          <span class="pill">📍 Vijay Nagar</span>
+          <span class="pill">📍 Palasia</span>
+          <span class="pill">📍 Bhawarkua</span>
+          <span class="pill">📍 AB Road</span>
+          <span class="pill">📍 New Palasia</span>
+          <span class="pill">📍 Super Corridor</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Problem vs Solution Section -->
+  <section class="section problem-section" id="problem">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag error-tag">The ₹3,000 Agency Trap</div>
+        <h2 class="section-heading">Why Typical Social Media Agencies Fail Local Businesses</h2>
+        <p class="section-subtext">You hire an agency for ₹3,000–₹5,000. They make your page look pretty for 30 days. But your phone never rings and zero customers walk in. Here is why.</p>
+      </div>
+
+      <div class="comparison-grid">
+        <!-- Broken Model -->
+        <div class="comparison-card broken">
+          <div class="card-header-badge broken-badge">❌ Typical Posting Agency</div>
+          <h3 class="comparison-title">"Content Posting & Vanity Likes"</h3>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-icon cross">✕</span>
+              <div><strong>Sells "12 Reels + 15 Posts":</strong> Downloads stock Canva templates with generic quotes that nobody cares about.</div>
+            </li>
+            <li>
+              <span class="comp-icon cross">✕</span>
+              <div><strong>Hides Ads in Their Retainer:</strong> Claims "₹5,000 includes ads," eats ₹4,000 as profit, spends ₹1,000 on useless boost buttons.</div>
+            </li>
+            <li>
+              <span class="comp-icon cross">✕</span>
+              <div><strong>Ignores Google Maps & Reviews:</strong> Leaves your Google Business Profile unranked while competitors steal local searchers.</div>
+            </li>
+            <li>
+              <span class="comp-icon cross">✕</span>
+              <div><strong>No Lead Capture Funnel:</strong> No WhatsApp automated greeting, no instant reply flow, leads slip away in 10 minutes.</div>
+            </li>
+            <li>
+              <span class="comp-icon cross">✕</span>
+              <div><strong>Reports on "Likes & Reach":</strong> Gives you vanity graphs. You can't pay shop rent or staff salaries with Instagram likes.</div>
+            </li>
+          </ul>
+          <div class="comparison-result broken-result">
+            <strong>Outcome:</strong> You cancel after 60 days because you spent money with zero sales.
+          </div>
+        </div>
+
+        <!-- Socialkaroo Model -->
+        <div class="comparison-card solution">
+          <div class="card-header-badge solution-badge">⚡ The Socialkaroo Growth Engine</div>
+          <h3 class="comparison-title">"Inbound Leads & Revenue Partner"</h3>
+          <ul class="comp-list">
+            <li>
+              <span class="comp-icon check">✓</span>
+              <div><strong>Offer-Led High-Conversion Reels:</strong> On-location shoots in Indore with hooks that drive direct DMs and phone inquiries.</div>
+            </li>
+            <li>
+              <span class="comp-icon check">✓</span>
+              <div><strong>100% Transparent Ad Billing:</strong> You pay ad budget directly to your own Meta account. We take 0% cut from your ad money.</div>
+            </li>
+            <li>
+              <span class="comp-icon check">✓</span>
+              <div><strong>Google Maps (GBP) Top-3 Dominance:</strong> We generate 10+ verified 5★ reviews in Month 1 and rank you for "near me" searches.</div>
+            </li>
+            <li>
+              <span class="comp-icon check">✓</span>
+              <div><strong>5-Minute WhatsApp Auto-Funnels:</strong> Instant greeting menus, catalog setup, and fast response SOPs so every lead is captured.</div>
+            </li>
+            <li>
+              <span class="comp-icon check">✓</span>
+              <div><strong>Reports on Calls, Leads & Sales:</strong> We track WhatsApp inquiries, phone calls, walk-ins, and closed customer revenue.</div>
+            </li>
+          </ul>
+          <div class="comparison-result solution-result">
+            <strong>Outcome:</strong> Predictable customer flow every week and a 90-day compounding ROI.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Services Section -->
+  <section class="section services-section" id="services">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Our 4 Core Growth Pillars</div>
+        <h2 class="section-heading">The Complete Local Customer Acquisition Engine</h2>
+        <p class="section-subtext">We don't do random marketing. We install four interconnected systems that turn local Indore searchers into loyal customers.</p>
+      </div>
+
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <div class="service-icon-wrap icon-blue">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+          </div>
+          <div class="service-number">01</div>
+          <h3 class="service-title">Google Maps & Local Search Dominance</h3>
+          <p class="service-desc">When Indore locals search for your service near Vijay Nagar, Palasia, or Bhawarkua, your listing appears in the Top-3 Map Pack with verified 5★ reviews.</p>
+          <ul class="service-perks">
+            <li><span>✓</span> Full Google Business Profile (GBP) SEO & NAP Audit</li>
+            <li><span>✓</span> 10–15 Verified Customer Reviews generated in Month 1</li>
+            <li><span>✓</span> Direct Call & Direction Request tracking</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap icon-purple">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="2.18" ry="2.18"/><line x1="7" y1="2" x2="7" y2="22"/><line x1="17" y1="2" x2="17" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="2" y1="7" x2="7" y2="7"/><line x1="2" y1="17" x2="7" y2="17"/><line x1="17" y1="17" x2="22" y2="17"/><line x1="17" y1="7" x2="22" y2="7"/></svg>
+          </div>
+          <div class="service-number">02</div>
+          <h3 class="service-title">Offer-Led Reels & Content Production</h3>
+          <p class="service-desc">We batch-shoot high-energy reels at your Indore location using proven hook-story-offer frameworks designed to convert viewers into WhatsApp inquiries.</p>
+          <ul class="service-perks">
+            <li><span>✓</span> 2-Hour on-site batch video shoot at your premises</li>
+            <li><span>✓</span> Irresistible introductory offer engineering</li>
+            <li><span>✓</span> Local Indore geo-tagging & niche targeting</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap icon-green">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+          </div>
+          <div class="service-number">03</div>
+          <h3 class="service-title">WhatsApp Business Sales Funnel</h3>
+          <p class="service-desc">We build 5-minute lead capture systems: automated welcome menus, instant catalog replies, and custom DM keywords so you never miss an inquiry.</p>
+          <ul class="service-perks">
+            <li><span>✓</span> Automated Greeting & Quick-Reply Snippets (`/pricing`, `/book`)</li>
+            <li><span>✓</span> WhatsApp Product / Service Catalog setup</li>
+            <li><span>✓</span> Front-desk 5-minute lead closing training SOP</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon-wrap icon-amber">
+            <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="service-number">04</div>
+          <h3 class="service-title">High-ROI Paid Meta & Google Ads</h3>
+          <p class="service-desc">Target buyers within a 5–7 km radius of your Indore store or clinic. We run high-converting WhatsApp lead ads and retarget warm profile visitors.</p>
+          <ul class="service-perks">
+            <li><span>✓</span> Direct Meta ad account setup (Zero agency markup)</li>
+            <li><span>✓</span> Hyper-local radius targeting & custom audience retargeting</li>
+            <li><span>✓</span> Weekly Cost-Per-Lead (CPL) optimization & tracking</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive ROI Calculator -->
+  <section class="section calculator-section" id="calculator">
+    <div class="container">
+      <div class="calculator-box">
+        <div class="calc-header text-center">
+          <div class="section-tag">Interactive Estimator</div>
+          <h2 class="section-heading" style="color:white;">Estimate Your Monthly Lead & Revenue Growth</h2>
+          <p style="color: #94a3b8; font-size: 14px; max-width: 600px; margin: 8px auto 0;">See how much extra revenue the Socialkaroo Inbound Sales Engine can generate for your specific local business in Indore.</p>
+        </div>
+
+        <div class="calc-body">
+          <div class="calc-inputs">
+            
+            <div class="form-group">
+              <label for="calcIndustry">Select Your Industry / Niche:</label>
+              <select id="calcIndustry" class="calc-select" onchange="calculateROI()">
+                <option value="clinic" data-ticket="1500" data-leads="45">Dental Clinic / Doctor / Healthcare (Avg. ₹1,500)</option>
+                <option value="salon" data-ticket="900" data-leads="60">Salon, Spa & Beauty Studio (Avg. ₹900)</option>
+                <option value="cafe" data-ticket="450" data-leads="120">Cafe, Restaurant & Food Outlet (Avg. ₹450)</option>
+                <option value="coaching" data-ticket="15000" data-leads="25">Coaching Institute / EdTech (Avg. ₹15,000)</option>
+                <option value="interior" data-ticket="40000" data-leads="12">Interior Design & Home Decor (Avg. ₹40,000)</option>
+                <option value="realestate" data-ticket="75000" data-leads="10">Real Estate Consultant / Plots (Avg. ₹75,000)</option>
+                <option value="retail" data-ticket="2500" data-leads="35">Retail Store / Fashion Boutique (Avg. ₹2,500)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="calcTicket">Your Average Customer Order / Ticket Size (₹):</label>
+              <div class="range-display">
+                <span id="ticketDisplay">₹1,500</span>
+              </div>
+              <input type="range" id="calcTicket" min="300" max="100000" step="100" value="1500" oninput="updateTicketFromSlider()">
+            </div>
+
+            <div class="form-group">
+              <label for="calcConversion">Expected Lead-to-Customer Close Rate (%):</label>
+              <div class="range-display">
+                <span id="convDisplay">25% (Typical for WhatsApp leads)</span>
+              </div>
+              <input type="range" id="calcConversion" min="10" max="50" step="5" value="25" oninput="calculateROI()">
+            </div>
+
+          </div>
+
+          <div class="calc-results">
+            <div class="results-card">
+              <div class="result-badge">⚡ Projected Monthly Impact</div>
+              
+              <div class="result-row">
+                <span class="res-title">Estimated Monthly Inbound Leads:</span>
+                <span class="res-value highlight-cyan" id="resLeads">45 Leads</span>
+              </div>
+
+              <div class="result-row">
+                <span class="res-title">New Paying Customers Converted:</span>
+                <span class="res-value" id="resCustomers">11 Customers</span>
+              </div>
+
+              <div class="result-divider"></div>
+
+              <div class="result-row big-row">
+                <span class="res-title">Estimated Extra Monthly Revenue:</span>
+                <span class="res-value grand-total" id="resRevenue">₹16,500</span>
+              </div>
+
+              <div class="roi-summary-box">
+                <div id="roiText">With Socialkaroo <strong>Tier 2 Growth (₹9,500/mo)</strong>, your estimated Return On Investment is <strong>1.7x</strong> in Month 2–3.</div>
+              </div>
+
+              <a href="#audit-form" class="btn-primary btn-block">Lock In This Growth System ↗</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 90-Day Compounding System Section -->
+  <section class="section system-section" id="system">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Predictable 90-Day Framework</div>
+        <h2 class="section-heading">How We Build A Compounding Local Sales Machine</h2>
+        <p class="section-subtext">No false overnight promises. Here is our exact month-by-month roadmap to turn your social channels into a permanent business asset.</p>
+      </div>
+
+      <div class="timeline-grid">
+        
+        <div class="timeline-card">
+          <div class="timeline-month-badge">Month 01</div>
+          <h3 class="timeline-title">Foundation & Free Levers</h3>
+          <p class="timeline-desc">We build the lead capture infrastructure and dominate local Google Maps without wasting ad spend.</p>
+          <div class="timeline-milestones">
+            <div class="milestone-item">
+              <span class="m-icon">🎯</span>
+              <span><strong>Google Maps Top-3:</strong> NAP optimization, high-res photos & keyword citations.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">⭐</span>
+              <span><strong>10+ Reviews Blitz:</strong> QR standee & WhatsApp campaign to happy past clients.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">💬</span>
+              <span><strong>WhatsApp Automation:</strong> Greeting flow, menu & catalog live.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">🎬</span>
+              <span><strong>16 Conversion Reels:</strong> 2-hour batch shoot with local Indore offer hooks.</span>
+            </div>
+          </div>
+          <div class="timeline-target">
+            <strong>Month 1 Output:</strong> Complete digital asset + First 15–25 organic inquiries.
+          </div>
+        </div>
+
+        <div class="timeline-card active-card">
+          <div class="popular-ribbon">Acceleration</div>
+          <div class="timeline-month-badge">Month 02</div>
+          <h3 class="timeline-title">Inbound Velocity & Paid Ads</h3>
+          <p class="timeline-desc">We turn on direct customer inquiries, run micro-booster ads, and tune front-desk conversion speed.</p>
+          <div class="timeline-milestones">
+            <div class="milestone-item">
+              <span class="m-icon">🚀</span>
+              <span><strong>Comment-to-DM Engine:</strong> Automated WhatsApp triggers from reel comments.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">📢</span>
+              <span><strong>Client-Funded Ads:</strong> ₹100–150/day Meta ads targeting 5 km Indore radius.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">⚡</span>
+              <span><strong>5-Min Speed-to-Lead:</strong> Train staff to close inquiries over WhatsApp.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">📊</span>
+              <span><strong>Month 2 Lead Report:</strong> Full attribution of calls, WhatsApp leads & sales.</span>
+            </div>
+          </div>
+          <div class="timeline-target">
+            <strong>Month 2 Output:</strong> 35–60+ Qualified Inbound Leads flowing monthly.
+          </div>
+        </div>
+
+        <div class="timeline-card">
+          <div class="timeline-month-badge">Month 03</div>
+          <h3 class="timeline-title">Predictable Sales Machine</h3>
+          <p class="timeline-desc">Organic Google rankings compound, repeat referral loops activate, and ROI stabilizes.</p>
+          <div class="timeline-milestones">
+            <div class="milestone-item">
+              <span class="m-icon">🔄</span>
+              <span><strong>Customer Referral Loop:</strong> Automated WhatsApp referral blast to past buyers.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">🎯</span>
+              <span><strong>Retargeting Campaigns:</strong> Show video reviews to warm profile visitors.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">📈</span>
+              <span><strong>Compounding Search Rank:</strong> High Google Maps ranking delivers daily free calls.</span>
+            </div>
+            <div class="milestone-item">
+              <span class="m-icon">🔒</span>
+              <span><strong>Quarterly Review:</strong> Present total closed revenue & lock in 6–12 mo retainer.</span>
+            </div>
+          </div>
+          <div class="timeline-target">
+            <strong>Month 3 Output:</strong> Self-sustaining local inbound customer acquisition engine.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Indore Client Results / Case Studies -->
+  <section class="section results-section" id="results">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Real Indore Case Studies</div>
+        <h2 class="section-heading">Proof That Inbound Systems Work</h2>
+        <p class="section-subtext">Here is what happens when local businesses switch from "vanity posting" to the Socialkaroo Inbound Engine.</p>
+      </div>
+
+      <div class="case-studies-grid">
+        
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-niche">Healthcare / Dental Clinic</span>
+            <span class="case-location">📍 Vijay Nagar, Indore</span>
+          </div>
+          <h3 class="case-title">Dr. Verma Dental & Aesthetic Clinic</h3>
+          <p class="case-quote">"Before Socialkaroo, we spent ₹5,000 for 6 months with another agency and got 0 patients. Socialkaroo ranked our Google Maps in Top-3, got 14 new 5-star reviews, and brought 47 WhatsApp leads in Month 2."</p>
+          
+          <div class="case-metrics">
+            <div class="c-metric">
+              <span class="c-val">+47</span>
+              <span class="c-label">WhatsApp Inquiries</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">+34</span>
+              <span class="c-label">Direct Maps Calls</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">₹68,000</span>
+              <span class="c-label">New Patient Revenue</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-niche">Beauty & Salon</span>
+            <span class="case-location">📍 New Palasia, Indore</span>
+          </div>
+          <h3 class="case-title">Glow & Glamour Beauty Studio</h3>
+          <p class="case-quote">"Their batch shoot produced 16 high-energy reels with a combo offer hook @ ₹799. Our WhatsApp literally flooded with weekend bookings. Best marketing decision we made this year."</p>
+          
+          <div class="case-metrics">
+            <div class="c-metric">
+              <span class="c-val">128</span>
+              <span class="c-label">Map Directions</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">58</span>
+              <span class="c-label">Appointment Bookings</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">4.8★</span>
+              <span class="c-label">Google Rating</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-card">
+          <div class="case-top">
+            <span class="case-niche">Interior Design</span>
+            <span class="case-location">📍 AB Road / Bypass, Indore</span>
+          </div>
+          <h3 class="case-title">Verve Home Interiors</h3>
+          <p class="case-quote">"High-ticket interior clients don't buy from meme posts. Socialkaroo created video walkthroughs of our Indore flat projects and setup direct WhatsApp 3D layout inquiries. We closed 4 major turnkey projects."</p>
+          
+          <div class="case-metrics">
+            <div class="c-metric">
+              <span class="c-val">22</span>
+              <span class="c-label">High-Ticket Leads</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">4</span>
+              <span class="c-label">Turnkey Deals Closed</span>
+            </div>
+            <div class="c-metric">
+              <span class="c-val">11.4x</span>
+              <span class="c-label">Calculated ROAS</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section class="section pricing-section" id="pricing">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Transparent Pricing</div>
+        <h2 class="section-heading">Simple, High-ROI Growth Packages</h2>
+        <p class="section-subtext">No hidden ad markups. No deceptive contracts. You pay for execution and keep 100% of the customer revenue.</p>
+        
+        <div class="pricing-toggle-wrap">
+          <span class="toggle-label active" id="lblMonthly">Monthly Retainer</span>
+          <label class="switch">
+            <input type="checkbox" id="pricingToggle" onchange="togglePricingDuration()">
+            <span class="slider round"></span>
+          </label>
+          <span class="toggle-label" id="lblQuarterly">90-Day Upfront <span class="discount-pill">Save 10%</span></span>
+        </div>
+      </div>
+
+      <div class="pricing-cards-grid">
+        
+        <!-- Tier 1 -->
+        <div class="price-box">
+          <div class="price-header">
+            <h3 class="p-tier-name">Tier 1 · Presence</h3>
+            <p class="p-tagline">Basic brand hygiene & active social feed maintenance.</p>
+          </div>
+          <div class="p-amount-wrap">
+            <div class="p-amount" id="tier1Price">₹5,000 <span class="p-period">/ month</span></div>
+            <div class="p-setup" id="tier1Setup">+ ₹3,000 One-Time Setup</div>
+          </div>
+          <ul class="p-feature-list">
+            <li><span class="p-icon check">✓</span> <strong>12 High-Quality Posts & Reels</strong> / month</li>
+            <li><span class="p-icon check">✓</span> Branded captions, hashtags & scheduling</li>
+            <li><span class="p-icon check">✓</span> Monthly reach & engagement report</li>
+            <li><span class="p-icon cross">✕</span> Google Maps / GBP Optimization</li>
+            <li><span class="p-icon cross">✕</span> WhatsApp Lead Capture & Automation</li>
+            <li><span class="p-icon cross">✕</span> Paid Ad Strategy & Campaign Management</li>
+            <li><span class="p-icon cross">✕</span> No Direct Lead / Sales Guarantee</li>
+          </ul>
+          <div class="p-cta-wrap">
+            <a href="#audit-form" class="btn-outline btn-block">Choose Presence</a>
+          </div>
+        </div>
+
+        <!-- Tier 2 (Growth - Recommended) -->
+        <div class="price-box featured-box">
+          <div class="popular-ribbon">⭐ Most Popular (85% Choose This)</div>
+          <div class="price-header">
+            <h3 class="p-tier-name">Tier 2 · Growth Engine</h3>
+            <p class="p-tagline">Organic social + local search engine + WhatsApp lead funnel.</p>
+          </div>
+          <div class="p-amount-wrap">
+            <div class="p-amount featured-amount" id="tier2Price">₹9,500 <span class="p-period">/ month</span></div>
+            <div class="p-setup featured-setup" id="tier2Setup">+ ₹7,500 One-Time Setup</div>
+          </div>
+          <ul class="p-feature-list">
+            <li><span class="p-icon check">✓</span> <strong>16 Conversion-Focused Reels & Creatives</strong></li>
+            <li><span class="p-icon check">✓</span> <strong class="glow-text">Google Maps (GBP) Top-3 Local Optimization</strong></li>
+            <li><span class="p-icon check">✓</span> <strong class="glow-text">10 Verified 5★ Customer Reviews</strong> in Month 1</li>
+            <li><span class="p-icon check">✓</span> <strong class="glow-text">WhatsApp Business Lead Auto-Reply Flow</strong></li>
+            <li><span class="p-icon check">✓</span> High-Converting Bio Link & DM Trigger Funnel</li>
+            <li><span class="p-icon check">✓</span> 2-Hour On-Location Batch Shoot in Indore</li>
+            <li><span class="p-icon check">✓</span> <strong class="glow-text">Monthly Inbound Leads & Calls Attribution Report</strong></li>
+          </ul>
+          <div class="p-cta-wrap">
+            <a href="#audit-form" class="btn-primary btn-block">Start Growth Engine ↗</a>
+          </div>
+        </div>
+
+        <!-- Tier 3 -->
+        <div class="price-box">
+          <div class="price-header">
+            <h3 class="p-tier-name">Tier 3 · Sales Machine</h3>
+            <p class="p-tagline">Aggressive customer acquisition with paid Meta/Google ads.</p>
+          </div>
+          <div class="p-amount-wrap">
+            <div class="p-amount" id="tier3Price">₹14,000 <span class="p-period">/ month</span></div>
+            <div class="p-setup" id="tier3Setup">+ ₹12,000 One-Time Setup</div>
+          </div>
+          <ul class="p-feature-list">
+            <li><span class="p-icon check">✓</span> <strong>Everything in Tier 2 Growth included</strong></li>
+            <li><span class="p-icon check">✓</span> <strong>Complete Meta & Instagram Paid Ad Management</strong></li>
+            <li><span class="p-icon check">✓</span> High-Converting Ad Copy & Hook A/B Testing</li>
+            <li><span class="p-icon check">✓</span> Retargeting warm profile visitors & website leads</li>
+            <li><span class="p-icon check">✓</span> Custom Lead Qualification CRM / Sheet Sync</li>
+            <li><span class="p-icon check">✓</span> Weekly Lead Strategy Review Call</li>
+            <li><span class="p-icon check">✓</span> Priority 24/7 WhatsApp Support Channel</li>
+          </ul>
+          <div class="p-cta-wrap">
+            <a href="#audit-form" class="btn-outline btn-block">Choose Sales Machine</a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Ad Spend Transparency Notice -->
+      <div class="ad-transparency-banner">
+        <div class="ad-banner-icon">📢</div>
+        <div class="ad-banner-text">
+          <h4>100% Transparent Ad Spend Policy</h4>
+          <p>Unlike other agencies, our retainers cover pure creative and technical execution. Any paid ad budget (suggested test budget: ₹3,000–₹5,000/mo) is billed directly to your own Meta/Google account with zero hidden markups.</p>
+        </div>
+        <a href="pricing-onepager.html" target="_blank" class="btn-sm-white">View PDF Proposal ↗</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section faq-section" id="faq">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-heading">Everything You Need To Know</h2>
+        <p class="section-subtext">Clear answers to the most common questions Indore business owners ask us.</p>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item active">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Why should I pay ₹9,500 when another freelancer is offering ₹3,000?</span>
+            <span class="faq-toggle-icon">−</span>
+          </button>
+          <div class="faq-answer">
+            <p>If you pay ₹3,000/month for 3 months and get zero customer calls, you lost ₹9,000 and 90 days. A ₹3,000 freelancer only downloads generic Canva templates. Socialkaroo builds an actual local search asset: ranking your Google Business Profile, generating 10+ verified 5★ reviews, automating your WhatsApp lead flow, and delivering qualified inbound inquiries. If we bring you just 3–5 extra customers a month, our fee pays for itself.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Why is ad spend billed separately from your agency fee?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>When an agency says "₹5,000 includes ad spend," they usually pocket ₹4,000 and spend only ₹1,000 on ads, which produces zero results. We believe in 100% transparency. Our retainer covers strategy, shooting, editing, Google SEO, and funnel setup. Your ad budget is linked directly to your own Meta card/UPI so you can see every single rupee spent and cost per lead live in real time.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Why do you require a 90-day growth commitment?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Real customer acquisition requires building assets, not playing a lottery. Month 1 is for foundation (GBP setup, 10 reviews, WhatsApp flow). Month 2 is when inquiries and calls accelerate. Month 3 is when local rankings compound into daily organic walk-ins. Stopping after 30 days means quitting right before the engine generates compounding returns.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>Does this work for specialized local niches (Clinics, Salons, Interior, Coaching)?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! We specifically specialize in local businesses where customers search locally or want social proof before visiting. We have battle-tested playbooks for Doctors & Dental Clinics, Salons & Spas, Cafes & Restaurants, Coaching Institutes, Interior Designers, Real Estate Consultants, and Retail Stores in Indore.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question" onclick="toggleFAQ(this)">
+            <span>How soon can we start and see the first leads?</span>
+            <span class="faq-toggle-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Our onboarding takes 3–5 days. By Day 7, your Google Business Profile is overhauled and the 10-review blitz begins. We shoot the first batch of reels in Week 2, and initial WhatsApp inquiries start flowing between Day 10 and Day 20.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture / Free Audit Form Section -->
+  <section class="section audit-section" id="audit-form">
+    <div class="container">
+      <div class="audit-card">
+        <div class="audit-left">
+          <div class="section-tag" style="background: rgba(56,189,248,0.15); color:#38bdf8; border:1px solid rgba(56,189,248,0.3);">⚡ Free Growth Session</div>
+          <h2 class="audit-title">Get Your Free 15-Minute Local Lead & Google Maps Audit</h2>
+          <p class="audit-desc">We will audit your Google Business Profile, Instagram page, and competitor rankings in Indore — and give you an exact 3-step action plan to double your customer inquiries.</p>
+          
+          <div class="audit-perks">
+            <div class="perk-row">
+              <span class="p-check">✓</span>
+              <span><strong>Google Maps Rank Audit:</strong> See where your competitors outrank you in Indore</span>
+            </div>
+            <div class="perk-row">
+              <span class="p-check">✓</span>
+              <span><strong>Offer & Reel Strategy:</strong> 3 viral reel hooks tailored to your exact niche</span>
+            </div>
+            <div class="perk-row">
+              <span class="p-check">✓</span>
+              <span><strong>WhatsApp Lead Funnel Blueprint:</strong> How to stop losing leads in your DMs</span>
+            </div>
+          </div>
+
+          <div class="direct-contact-box">
+            <span>Prefer a direct conversation right now?</span>
+            <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20schedule%20a%20call%20for%20my%20business%20in%20Indore" target="_blank" class="direct-wa-link">
+              💬 WhatsApp: +91 98765 43210
+            </a>
+          </div>
+        </div>
+
+        <div class="audit-right">
+          <form class="audit-form-element" id="leadForm" onsubmit="handleFormSubmit(event)">
+            <h3 class="form-title">Claim Your Free Growth Audit</h3>
+            
+            <div class="form-field">
+              <label for="fName">Your Name *</label>
+              <input type="text" id="fName" required placeholder="e.g. Dr. Verma / Rajesh Sharma">
+            </div>
+
+            <div class="form-field">
+              <label for="fBusiness">Business / Clinic Name *</label>
+              <input type="text" id="fBusiness" required placeholder="e.g. Verma Dental Care">
+            </div>
+
+            <div class="form-field">
+              <label for="fPhone">WhatsApp Number *</label>
+              <input type="tel" id="fPhone" required placeholder="e.g. 98765 43210">
+            </div>
+
+            <div class="form-field">
+              <label for="fCategory">Business Category *</label>
+              <select id="fCategory" required>
+                <option value="">-- Select Industry --</option>
+                <option value="Clinic / Healthcare">Dental Clinic / Healthcare</option>
+                <option value="Salon / Beauty">Salon, Spa & Beauty</option>
+                <option value="Cafe / Restaurant">Cafe / Restaurant</option>
+                <option value="Coaching / Education">Coaching / Education</option>
+                <option value="Interior Design">Interior Design & Architecture</option>
+                <option value="Real Estate">Real Estate / Property</option>
+                <option value="Retail / Boutique">Retail Store / Fashion</option>
+                <option value="Other Local Business">Other Local Business</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="fLocation">Location in Indore</label>
+              <input type="text" id="fLocation" placeholder="e.g. Vijay Nagar / Palasia / Bhawarkua">
+            </div>
+
+            <button type="submit" class="btn-primary btn-block" id="submitBtn">
+              <span>Send My Free Audit ⚡</span>
+            </button>
+            <p class="form-privacy">🔒 100% Confidential. No spam. We reply on WhatsApp in &lt;15 mins.</p>
+          </form>
+
+          <div class="form-success-message" id="successBox" style="display:none;">
+            <div class="success-icon">🎉</div>
+            <h3>Thank You! We Received Your Request.</h3>
+            <p>Our Indore growth strategist is analyzing your Google profile and will message you on WhatsApp within 15 minutes.</p>
+            <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20just%20submitted%20the%20audit%20form" class="btn-whatsapp btn-block" style="margin-top:16px;">Open WhatsApp Directly ↗</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo">
+            <div class="logo-icon">⚡</div>
+            <div class="logo-text">Social<span>karoo</span></div>
+          </div>
+          <p class="footer-tagline">Indore's Premier Inbound Lead Generation & Social Media Growth Partner for Ambitious Local Businesses.</p>
+          <div class="footer-loc">📍 Vijay Nagar, Indore, Madhya Pradesh 452010</div>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#problem">Why Socialkaroo</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#system">90-Day System</a></li>
+            <li><a href="#results">Indore Case Studies</a></li>
+            <li><a href="#pricing">Pricing Plans</a></li>
+            <li><a href="pricing-onepager.html" target="_blank">PDF Pricing Proposal ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Growth Systems</h4>
+          <ul>
+            <li><a href="#services">Google Maps SEO</a></li>
+            <li><a href="#services">Reels Production</a></li>
+            <li><a href="#services">WhatsApp Auto-Funnels</a></li>
+            <li><a href="#services">Paid Meta/Google Ads</a></li>
+            <li><a href="#calculator">ROI Calculator</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links-col">
+          <h4>Direct Contact</h4>
+          <ul>
+            <li>📞 <a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li>💬 <a href="https://wa.me/919876543210" target="_blank">WhatsApp Business</a></li>
+            <li>✉️ <a href="mailto:contact@socialkaroo.com">contact@socialkaroo.com</a></li>
+            <li>⏰ Mon – Sat: 9:30 AM – 7:30 PM</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Socialkaroo. All rights reserved. Indore, India.</div>
+        <div>Designed for High Inbound Conversion • Built with ⚡</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Action Button -->
+  <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20know%20how%20you%20can%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="floating-wa" title="Chat on WhatsApp">
+    <div class="wa-tooltip">💬 Get More Leads! Chat with us</div>
+    <div class="wa-bubble">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+    </div>
+  </a>
+
+  <script src="script.js"></script>
 </body>
 </html>
