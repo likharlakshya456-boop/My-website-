@@ -43,16 +43,22 @@
       <nav class="nav-links" id="navLinks">
         <a href="#problem" class="nav-link">Why Us</a>
         <a href="#services" class="nav-link">Services</a>
+        <a href="#funnel" class="nav-link">Lead Funnel</a>
         <a href="#system" class="nav-link">90-Day System</a>
         <a href="#results" class="nav-link">Results</a>
         <a href="#calculator" class="nav-link">ROI Calculator</a>
         <a href="#pricing" class="nav-link">Pricing</a>
+        <a href="#book-call" class="nav-link">Book a Call</a>
         <a href="#faq" class="nav-link">FAQ</a>
         <a href="#audit-form" class="nav-cta-btn mobile-only">Book Free Audit</a>
       </nav>
 
       <div class="nav-actions">
-        <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="wa-nav-btn">
+        <a href="https://www.instagram.com/social_karooo" target="_blank" rel="noopener" class="ig-nav-btn" title="Follow @social_karooo on Instagram">
+          <svg class="ig-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+          <span>@social_karooo</span>
+        </a>
+        <a href="https://wa.me/916267556790?text=Hi%20Socialkaroo!%20I%20want%20to%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="wa-nav-btn">
           <svg class="wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.54 1.772.82 2.79.82 3.182 0 5.768-2.587 5.769-5.766.001-3.182-2.585-5.766-5.769-5.766zm9.969 5.828c0 5.523-4.477 10-10 10-1.745 0-3.385-.45-4.819-1.238l-5.181 1.357 1.378-5.045c-.868-1.488-1.378-3.222-1.378-5.074 0-5.523 4.477-10 10-10s10 4.477 10 10z"/></svg>
           <span>WhatsApp Us</span>
         </a>
@@ -66,6 +72,7 @@
 
   <!-- Hero Section -->
   <section class="hero-section" id="hero">
+    <canvas id="particleCanvas" aria-hidden="true"></canvas>
     <div class="hero-glow-1"></div>
     <div class="hero-glow-2"></div>
     <div class="hero-container">
@@ -89,7 +96,7 @@
           <span>Book Free 15-Min Growth Audit</span>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
-        <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20get%20more%20customer%20leads%20for%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="btn-whatsapp">
+        <a href="https://wa.me/916267556790?text=Hi%20Socialkaroo!%20I%20want%20to%20get%20more%20customer%20leads%20for%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="btn-whatsapp">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
           <span>Chat on WhatsApp</span>
         </a>
@@ -276,6 +283,63 @@
           </ul>
         </div>
 
+      </div>
+    </div>
+  </section>
+
+  <!-- 3D Inbound Lead Funnel Simulator -->
+  <section class="section funnel-section" id="funnel">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">3D Inbound Lead Funnel Simulator</div>
+        <h2 class="section-heading">See Exactly How A Local Lead Becomes A Paying Customer</h2>
+        <p class="section-subtext">This is the exact 4-stage engine Socialkaroo installs for Indore businesses. Hit <strong>Run Simulation</strong> and watch leads flow from local discovery all the way to a closed sale &amp; 5★ review.</p>
+      </div>
+
+      <div class="funnel-stage-track" id="funnelTrack">
+        <div class="funnel-connector"></div>
+
+        <div class="funnel-stage" data-stage="1">
+          <div class="funnel-stage-num">01</div>
+          <div class="funnel-icon">📍</div>
+          <h3 class="funnel-stage-title">Local Discovery</h3>
+          <p class="funnel-stage-desc">Indore searchers find your Google Maps Top-3 listing &amp; offer reels in Vijay Nagar, Palasia &amp; across the city.</p>
+          <div class="funnel-metric"><span class="fm-num">0</span> <span class="fm-label">Local Searchers Reached</span></div>
+        </div>
+
+        <div class="funnel-stage" data-stage="2">
+          <div class="funnel-stage-num">02</div>
+          <div class="funnel-icon">💬</div>
+          <h3 class="funnel-stage-title">5-Min WhatsApp Funnel</h3>
+          <p class="funnel-stage-desc">Automated greeting, catalog &amp; instant replies capture every inquiry before the lead goes cold.</p>
+          <div class="funnel-metric"><span class="fm-num">0</span> <span class="fm-label">WhatsApp Inquiries Captured</span></div>
+        </div>
+
+        <div class="funnel-stage" data-stage="3">
+          <div class="funnel-stage-num">03</div>
+          <div class="funnel-icon">📞</div>
+          <h3 class="funnel-stage-title">Qualified Call</h3>
+          <p class="funnel-stage-desc">A trained front-desk SOP turns warm inquiries into bookable, qualified appointments within minutes.</p>
+          <div class="funnel-metric"><span class="fm-num">0</span> <span class="fm-label">Qualified Calls Booked</span></div>
+        </div>
+
+        <div class="funnel-stage" data-stage="4">
+          <div class="funnel-stage-num">04</div>
+          <div class="funnel-icon">💰</div>
+          <h3 class="funnel-stage-title">Closed Sale &amp; 5★ Review</h3>
+          <p class="funnel-stage-desc">Customers buy, then a review blitz converts their satisfaction into social proof that fuels Stage 01.</p>
+          <div class="funnel-metric"><span class="fm-num">0</span> <span class="fm-label">Closed Sales + 5★ Reviews</span></div>
+        </div>
+      </div>
+
+      <div class="funnel-controls">
+        <div class="funnel-lead-counter">
+          <span class="flc-big" id="funnelLeads">0</span>
+          <span class="flc-label">leads currently flowing through the funnel</span>
+        </div>
+        <button class="btn-primary funnel-run-btn" id="funnelRunBtn" onclick="runFunnelSimulation()">
+          <span id="funnelBtnText">▶ Run Simulation</span>
+        </button>
       </div>
     </div>
   </section>
@@ -649,6 +713,87 @@
     </div>
   </section>
 
+  <!-- 1-on-1 Strategy Call Booking Engine -->
+  <section class="section bookcall-section" id="book-call">
+    <div class="container">
+      <div class="section-header text-center">
+        <div class="section-tag">⚡ 1-on-1 Strategy Call</div>
+        <h2 class="section-heading">Book A Free Growth Strategy Call</h2>
+        <p class="section-subtext">Pick a day, choose a time slot, and select your call mode. We'll review your Google Maps ranking, Instagram, and competitor landscape — then hand you a concrete growth plan. Slots fill fast.</p>
+      </div>
+
+      <div class="bookcall-card">
+        <div class="bookcall-left">
+          <h3 class="bookcall-title">What You'll Get On The Call</h3>
+          <ul class="bookcall-perks">
+            <li><span class="bp-check">✓</span> Live Google Maps &amp; competitor rank audit for your Indore niche</li>
+            <li><span class="bp-check">✓</span> A teardown of your current Instagram &amp; WhatsApp lead flow</li>
+            <li><span class="bp-check">✓</span> A written 3-step growth plan tailored to your business</li>
+            <li><span class="bp-check">✓</span> Exact next-month action calendar — no fluff, no pitch decks</li>
+          </ul>
+          <div class="bookcall-hours">
+            <div class="hours-icon">🕒</div>
+            <div>
+              <strong>Available Slots:</strong> 11:30 AM – 8:00 PM (IST)
+              <span>Monday – Saturday · Vijay Nagar, Indore</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="bookcall-right">
+          <div class="bookcall-step-group">
+            <div class="bookcall-step-label"><span class="step-badge">1</span> Select Day</div>
+            <div class="day-selector" id="daySelector">
+              <button type="button" class="day-opt" data-offset="0" onclick="selectDay(this, 0)">Today</button>
+              <button type="button" class="day-opt" data-offset="1" onclick="selectDay(this, 1)">Tomorrow</button>
+              <button type="button" class="day-opt" data-offset="2" onclick="selectDay(this, 2)">Day After</button>
+            </div>
+            <div class="selected-date-line" id="selectedDateLine">Select a day to see available slots</div>
+          </div>
+
+          <div class="bookcall-step-group">
+            <div class="bookcall-step-label"><span class="step-badge">2</span> Pick A Time Slot <span class="slot-note">11:30 AM – 8:00 PM IST</span></div>
+            <div class="slot-grid" id="slotGrid"><!-- JS-generated slots --></div>
+          </div>
+
+          <div class="bookcall-step-group">
+            <div class="bookcall-step-label"><span class="step-badge">3</span> Choose Call Mode</div>
+            <div class="mode-selector" id="modeSelector">
+              <button type="button" class="mode-opt" data-mode="Phone" onclick="selectMode(this)">
+                <span class="mode-icon">📱</span><span>Phone</span>
+              </button>
+              <button type="button" class="mode-opt" data-mode="WhatsApp Audio" onclick="selectMode(this)">
+                <span class="mode-icon">💬</span><span>WhatsApp Audio</span>
+              </button>
+              <button type="button" class="mode-opt" data-mode="Google Meet" onclick="selectMode(this)">
+                <span class="mode-icon">🔗</span><span>Google Meet</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="bookcall-summary">
+            <div class="bc-summary-line">
+              <span class="bc-key">Day</span>
+              <span class="bc-val" id="sumDay">—</span>
+            </div>
+            <div class="bc-summary-line">
+              <span class="bc-key">Time</span>
+              <span class="bc-val" id="sumTime">—</span>
+            </div>
+            <div class="bc-summary-line">
+              <span class="bc-key">Mode</span>
+              <span class="bc-val" id="sumMode">—</span>
+            </div>
+            <button class="btn-primary btn-block bookcall-submit" id="bookCallBtn" onclick="confirmBooking()">
+              <span>Confirm &amp; Send On WhatsApp ↗</span>
+            </button>
+            <p class="bookcall-privacy">🔒 1-click sync to our WhatsApp (+91 62675 56790). No account needed.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- FAQ Section -->
   <section class="section faq-section" id="faq">
     <div class="container">
@@ -740,8 +885,11 @@
 
           <div class="direct-contact-box">
             <span>Prefer a direct conversation right now?</span>
-            <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20schedule%20a%20call%20for%20my%20business%20in%20Indore" target="_blank" class="direct-wa-link">
-              💬 WhatsApp: +91 98765 43210
+            <a href="https://wa.me/916267556790?text=Hi%20Socialkaroo!%20I%20want%20to%20schedule%20a%20call%20for%20my%20business%20in%20Indore" target="_blank" class="direct-wa-link">
+              💬 WhatsApp: +91 62675 56790
+            </a>
+            <a href="https://www.instagram.com/social_karooo" target="_blank" rel="noopener" class="direct-ig-link">
+              📷 Instagram: @social_karooo
             </a>
           </div>
         </div>
@@ -762,7 +910,7 @@
 
             <div class="form-field">
               <label for="fPhone">WhatsApp Number *</label>
-              <input type="tel" id="fPhone" required placeholder="e.g. 98765 43210">
+              <input type="tel" id="fPhone" required placeholder="e.g. 62675 56790">
             </div>
 
             <div class="form-field">
@@ -795,7 +943,7 @@
             <div class="success-icon">🎉</div>
             <h3>Thank You! We Received Your Request.</h3>
             <p>Our Indore growth strategist is analyzing your Google profile and will message you on WhatsApp within 15 minutes.</p>
-            <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20just%20submitted%20the%20audit%20form" class="btn-whatsapp btn-block" style="margin-top:16px;">Open WhatsApp Directly ↗</a>
+            <a href="https://wa.me/916267556790?text=Hi%20Socialkaroo!%20I%20just%20submitted%20the%20audit%20form" class="btn-whatsapp btn-block" style="margin-top:16px;">Open WhatsApp Directly ↗</a>
           </div>
         </div>
       </div>
@@ -841,9 +989,10 @@
         <div class="footer-links-col">
           <h4>Direct Contact</h4>
           <ul>
-            <li>📞 <a href="tel:+919876543210">+91 98765 43210</a></li>
-            <li>💬 <a href="https://wa.me/919876543210" target="_blank">WhatsApp Business</a></li>
-            <li>✉️ <a href="mailto:contact@socialkaroo.com">contact@socialkaroo.com</a></li>
+            <li>📞 <a href="tel:+916267556790">+91 62675 56790</a></li>
+            <li>💬 <a href="https://wa.me/916267556790" target="_blank">WhatsApp Business</a></li>
+            <li>📷 <a href="https://www.instagram.com/social_karooo" target="_blank" rel="noopener">@social_karooo</a></li>
+            <li>📍 Vijay Nagar, Indore</li>
             <li>⏰ Mon – Sat: 9:30 AM – 7:30 PM</li>
           </ul>
         </div>
@@ -856,8 +1005,16 @@
     </div>
   </footer>
 
+  <!-- Floating Instagram Action Button -->
+  <a href="https://www.instagram.com/social_karooo" target="_blank" rel="noopener" class="floating-ig" title="Follow @social_karooo">
+    <div class="ig-tooltip">📷 Follow @social_karooo</div>
+    <div class="ig-bubble">
+      <svg viewBox="0 0 24 24" width="26" height="26" fill="white"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+    </div>
+  </a>
+
   <!-- Floating WhatsApp Action Button -->
-  <a href="https://wa.me/919876543210?text=Hi%20Socialkaroo!%20I%20want%20to%20know%20how%20you%20can%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="floating-wa" title="Chat on WhatsApp">
+  <a href="https://wa.me/916267556790?text=Hi%20Socialkaroo!%20I%20want%20to%20know%20how%20you%20can%20grow%20my%20business%20in%20Indore" target="_blank" rel="noopener" class="floating-wa" title="Chat on WhatsApp">
     <div class="wa-tooltip">💬 Get More Leads! Chat with us</div>
     <div class="wa-bubble">
       <svg viewBox="0 0 24 24" width="28" height="28" fill="white"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
