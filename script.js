@@ -36,7 +36,7 @@ function initNavigation() {
   const header = document.getElementById('navbar');
   window.addEventListener('scroll', () => {
     if (window.scrollY > 40) {
-      header.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.4)';
+      header.style.boxShadow = '0 12px 28px -14px rgba(25, 26, 33, 0.22)';
     } else {
       header.style.boxShadow = 'none';
     }
@@ -248,10 +248,10 @@ function initParticleCanvas() {
 
   function pickColor() {
     const colors = [
-      'rgba(56,189,248,',   // neon cyan
-      'rgba(37,99,235,',    // cobalt
-      'rgba(129,140,248,',  // periwinkle glow
-      'rgba(165,180,252,'
+      'rgba(79,70,229,',    // royal indigo
+      'rgba(37,99,235,',    // royal blue
+      'rgba(14,165,233,',   // sky cyan
+      'rgba(201,162,75,'    // champagne gold
     ];
     return colors[Math.floor(Math.random() * colors.length)];
   }
@@ -277,7 +277,7 @@ function initParticleCanvas() {
       // Perspective projection: near = big & bright, far = small & faint
       const perspective = 1 + (1 - p.z / DEPTH) * 2.2;   // scale 1..3.2
       const radius = p.baseR * perspective;
-      const alpha = 0.16 + 0.7 * (1 - p.z / DEPTH);
+      const alpha = 0.10 + 0.28 * (1 - p.z / DEPTH);     // soft on light hero
 
       // Wrap around edges
       if (p.x < -20) p.x = W + 20;
@@ -288,7 +288,7 @@ function initParticleCanvas() {
       ctx.beginPath();
       ctx.arc(p.x, p.y, radius, 0, Math.PI * 2);
       ctx.fillStyle = p.color + alpha + ')';
-      ctx.shadowBlur = 14;
+      ctx.shadowBlur = 10;
       ctx.shadowColor = p.color.replace('rgba(', 'rgba(') + (alpha * 0.9) + ')';
       ctx.fill();
       ctx.shadowBlur = 0;

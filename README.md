@@ -18,10 +18,11 @@ We build Google Maps Top-3 rankings, high-converting offer reels, and automated 
 
 ## Features
 
+- **Premium Light Theme** — warm ivory canvas with royal indigo, sky cyan & champagne gold accents, and a deep-ink footer anchor.
 - **3D Animated Engine** — hardware-accelerated depth particle canvas in the hero + 3D card perspective tilt physics on hover.
 - **1-on-1 Strategy Call Booking Engine (`#book-call`)** — interactive day selector (Today / Tomorrow / Day After), time-slot picker (11:30 AM – 8:00 PM IST), and call mode selector (Phone / WhatsApp Audio / Google Meet) with 1-click WhatsApp sync to `6267556790`.
 - **3D Inbound Lead Funnel Simulator** — visual 4-stage pipeline (Local Discovery → 5-Min WhatsApp Funnel → Qualified Call → Closed Sale & 5★ Review) with an animated simulation.
-- **Executive Luxury Palette** — dark obsidian void, royal cobalt glow, and neon cyan accents.
+- **Executive Luxury Palette** — warm ivory light canvas, royal indigo glow, sky cyan & champagne gold accents.
 - **Interactive ROI Calculator & 3 Pricing Tiers** — Tier 1 Presence (₹5,000/mo), Tier 2 Growth Engine (₹9,500/mo), Tier 3 Sales Machine (₹14,000/mo).
 
 ## Structure
