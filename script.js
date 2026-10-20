@@ -14,6 +14,21 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 /* =========================================================================
+   0. Accessibility Helpers
+   ========================================================================= */
+
+/**
+ * Whether the visitor has asked the operating system to reduce motion.
+ * Read on every call so a preference change mid-session is honoured.
+ */
+function prefersReducedMotion() {
+  return (
+    typeof window.matchMedia === 'function' &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches
+  );
+}
+
+/* =========================================================================
    1. Mobile Navigation & Header Scroll
    ========================================================================= */
 function initNavigation() {
@@ -22,15 +37,32 @@ function initNavigation() {
   const links = document.querySelectorAll('.nav-link');
 
   if (toggle && navLinks) {
+    const setExpanded = (isOpen) => {
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    };
+
     toggle.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
+      const isOpen = navLinks.classList.toggle('show');
+      setExpanded(isOpen);
     });
 
     links.forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('show');
+        setExpanded(false);
       });
     });
+
+    // Escape closes the mobile menu and returns focus to the toggle.
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && navLinks.classList.contains('show')) {
+        navLinks.classList.remove('show');
+        setExpanded(false);
+        toggle.focus();
+      }
+    });
+
+    setExpanded(false);
   }
 
   const header = document.getElementById('navbar');
@@ -155,15 +187,19 @@ function toggleFAQ(button) {
       item.classList.remove('active');
       const otherIcon = item.querySelector('.faq-toggle-icon');
       if (otherIcon) otherIcon.textContent = '+';
+      const otherButton = item.querySelector('.faq-question');
+      if (otherButton) otherButton.setAttribute('aria-expanded', 'false');
     }
   });
 
   if (currentItem.classList.contains('active')) {
     currentItem.classList.remove('active');
     icon.textContent = '+';
+    button.setAttribute('aria-expanded', 'false');
   } else {
     currentItem.classList.add('active');
     icon.textContent = '−';
+    button.setAttribute('aria-expanded', 'true');
   }
 }
 
@@ -294,10 +330,18 @@ function initParticleCanvas() {
       ctx.shadowBlur = 0;
     }
 
-    rafId = requestAnimationFrame(frame);
+    rafId = staticOnly ? null : requestAnimationFrame(frame);
   }
 
   resize();
+
+  // Respect the operating system's reduced-motion preference: draw a single
+  // static frame instead of animating the particle field.
+  if (prefersReducedMotion()) {
+    frame(true);
+    return;
+  }
+
   frame();
 
   let resizeTimer = null;
@@ -330,6 +374,10 @@ function initTiltCards() {
   const tiltable = document.querySelectorAll(
     '.service-card, .case-card, .price-box, .timeline-card, .funnel-stage'
   );
+
+  // Pointer-tracked tilt is motion, so skip it entirely when reduced motion
+  // is requested.
+  if (prefersReducedMotion()) return;
 
   tiltable.forEach((card) => {
     card.addEventListener('mousemove', (e) => {
@@ -491,6 +539,19 @@ function runFunnelSimulation() {
 
   const leadCounter = document.getElementById('funnelLeads');
   if (leadCounter) leadCounter.textContent = '0';
+
+  // With reduced motion requested, jump straight to the final state rather
+  // than animating the counters up stage by stage.
+  if (prefersReducedMotion()) {
+    stageCounters.forEach((counter, i) => {
+      if (counter.el) counter.el.textContent = counter.target.toLocaleString('en-IN');
+      stages[i].classList.remove('stage-lit');
+      stages[i].classList.add('stage-done');
+    });
+    if (leadCounter) leadCounter.textContent = '19';
+    finishFunnel();
+    return;
+  }
 
   let stageIndex = 0;
   let runningLeads = 0;
