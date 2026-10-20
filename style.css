@@ -2091,3 +2091,41 @@ input:checked + .slider:before { transform: translateX(24px); }
   .slot-grid { grid-template-columns: repeat(3, 1fr); }
   .bookcall-card { padding: 24px; }
 }
+
+/* =========================================================================
+   ACCESSIBILITY
+   ========================================================================= */
+
+/* A visible focus ring for keyboard users, without showing it on mouse
+   clicks. Uses :focus-visible so the ring only appears for keyboard
+   interaction in browsers that support it. */
+:focus-visible {
+  outline: 3px solid #4f46e5;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Keep a visible ring in browsers without :focus-visible support. */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Honour the operating system's reduced-motion preference. Decorative
+   animation, transition and smooth scrolling are neutralised; the site
+   remains fully usable and the particle canvas renders a single static
+   frame instead of animating. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transition-delay: 0ms !important;
+    scroll-behavior: auto !important;
+  }
+}
