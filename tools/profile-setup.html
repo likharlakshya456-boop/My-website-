@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Profile README — copy and publish</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --fg: #14161a;
+    --muted: #5b6470;
+    --line: #dfe3e8;
+    --accent: #1f6feb;
+    --code-bg: #f6f8fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0d1117;
+      --fg: #e6edf3;
+      --muted: #9198a1;
+      --line: #30363d;
+      --accent: #6ea8ff;
+      --code-bg: #161b22;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    padding: 1.25rem;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+  main { max-width: 46rem; margin: 0 auto; }
+  h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+  h2 { font-size: 1.05rem; margin: 1.75rem 0 .5rem; }
+  p.lead { color: var(--muted); margin: 0 0 1.25rem; }
+  ol { padding-left: 1.25rem; }
+  li { margin-bottom: .5rem; }
+  a { color: var(--accent); }
+  code { background: var(--code-bg); padding: .1rem .35rem; border-radius: .3rem;
+         font-size: .9em; }
+  button {
+    display: block;
+    width: 100%;
+    margin: 1rem 0 .5rem;
+    padding: .9rem 1rem;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border: 0;
+    border-radius: .5rem;
+    cursor: pointer;
+  }
+  button:active { transform: translateY(1px); }
+  #status { min-height: 1.5rem; color: var(--muted); font-size: .92rem; }
+  textarea {
+    width: 100%;
+    height: 16rem;
+    margin-top: .75rem;
+    padding: .75rem;
+    font: 13px/1.5 ui-monospace, SFMono-Regular, Menlo, monospace;
+    color: var(--fg);
+    background: var(--code-bg);
+    border: 1px solid var(--line);
+    border-radius: .5rem;
+    resize: vertical;
+  }
+  details { margin-top: 1.25rem; border-top: 1px solid var(--line); padding-top: .75rem; }
+  summary { cursor: pointer; font-weight: 600; }
+  .note {
+    margin: 1rem 0 0;
+    padding: .75rem .9rem;
+    border-left: 3px solid var(--accent);
+    background: var(--code-bg);
+    border-radius: 0 .35rem .35rem 0;
+    font-size: .92rem;
+    color: var(--muted);
+  }
+</style>
+</head>
+<body>
+<main>
+  <h1>Profile README — copy and publish</h1>
+  <p class="lead">One page, three taps, no typing. This helper exists because the
+  automated publish could not reach the profile repository, not because
+  anything is broken.</p>
+
+  <h2>1. Copy the README</h2>
+  <p>Tap the button. The exact text of the profile README is placed on your
+  clipboard.</p>
+  <button id="copy" type="button">Copy the README to the clipboard</button>
+  <p id="status" role="status" aria-live="polite"></p>
+
+  <h2>2. Paste it into the profile repository</h2>
+  <ol>
+    <li>Open <a href="https://github.com/likharlakshya456-boop" target="_blank" rel="noopener">the profile page</a>.</li>
+    <li>Open the <strong>likharlakshya456-boop</strong> repository. On the
+        phone app it is under <em>Your repositories</em>; on the web, follow
+        the repository link in the repositories list.</li>
+    <li>Tap <strong>Add file</strong>, then <strong>Create new file</strong>.</li>
+    <li>Type <code>README.md</code> as the file name.</li>
+    <li>Tap into the editor, paste, and commit directly to
+        <code>main</code>.</li>
+  </ol>
+
+  <h2>3. Check it</h2>
+  <p>Reload the profile page. The README appears under your name. The
+  repository description, the topics, the pinned repositories and the profile
+  bio are separate settings — see the notes below.</p>
+
+  <h2>Also: the CI workflow for this site</h2>
+  <p>The repository already contains a workflow that validates every page and
+  every link, but the credential that built this page cannot push a
+  <code>.github/workflows/</code> file. Copy it and add it by hand.</p>
+  <button id="copy-ci" type="button">Copy the CI workflow to the clipboard</button>
+  <p id="status-ci" role="status" aria-live="polite"></p>
+  <ol>
+    <li>Open the <strong>My-website-</strong> repository.</li>
+    <li>Tap <strong>Add file</strong>, then <strong>Create new file</strong>.</li>
+    <li>Type <code>.github/workflows/ci.yml</code> as the path. GitHub creates
+        the folders for you.</li>
+    <li>Paste and commit to <code>main</code>.</li>
+  </ol>
+
+  <details>
+    <summary>If the copy button does not work</summary>
+    <p>Select the text below, copy it with your phone's own
+    select-and-copy gesture, and paste it into the editor.</p>
+    <textarea id="fallback" readonly spellcheck="false" aria-label="The profile README source"></textarea>
+  </details>
+
+  <details>
+    <summary>What still needs doing by hand, and why</summary>
+    <ul>
+      <li><strong>Repository description and topics</strong> — open the
+          repository, tap <em>About</em>, then the gear icon. A credential
+          without <code>repo</code> metadata write access cannot set these.</li>
+      <li><strong>Profile bio and website</strong> — open your avatar, then
+          <em>Your profile</em>, then <em>Edit profile</em>. The same
+          credential cannot write to the account endpoints.</li>
+      <li><strong>Pinned repositories</strong> — on the profile page, tap
+          <em>Customize your profile</em>, then <em>Pinned repositories</em>,
+          and add three: this site, llm-sentry, and the profile repository
+          itself.</li>
+      <li><strong>llm-sentry</strong> — this repository does not exist yet,
+          and creating one needs an account-level credential. The full source
+          is in the llm-sentry folder of the change bundle; on a computer,
+          <code>gh repo create likharlakshya456-boop/llm-sentry --public</code>
+          followed by a push is the whole job.</li>
+      <li><strong>The CI workflow for this site</strong> — it is already in
+          this repository as <code>.github/workflows/ci.yml</code>. A
+          credential without <code>workflow</code> write access cannot push
+          it, so it travels with the next commit that touches a normal file.</li>
+    </ul>
+  </details>
+
+  <p class="note">Nothing on this page is linked from the site's navigation.
+  It can be deleted at any time without affecting any public page.</p>
+</main>
+
+<script type="text/plain" id="readme-source">
+# Lakshya Likhar
+
+**AI Engineer · Software Developer · Founder of [Socialkaroo](https://github.com/likharlakshya456-boop/My-website-)**
+
+I build AI systems that hold up in production, and the interfaces that put
+them in front of people. Currently focused on **LLM reliability engineering** —
+retries, rate limits, circuit breaking, structured output, evaluation — and on
+shipping fast, dependency-light front-ends.
+
+Based in Indore, India. Open to AI engineering and software development
+roles, internships, and freelance projects.
+
+---
+
+## Selected work
+
+### [`llm-sentry`](https://github.com/likharlakshya456-boop/llm-sentry) — Python
+
+[![CI](https://github.com/likharlakshya456-boop/llm-sentry/actions/workflows/ci.yml/badge.svg)](https://github.com/likharlakshya456-boop/llm-sentry/actions/workflows/ci.yml)
+
+**A reliability toolkit for shipping LLM features.**
+
+Calling a chat-completion API from a prototype is one line. Calling it from a
+production service is not — a single `requests.post` has no idea that the
+provider will return `429` for the next ninety seconds, that the API key was
+rejected two minutes ago, or that the budget ran out an hour ago.
+
+`llm-sentry` is the layer that sits between the application and the provider.
+
+- **Unified provider interface** — one class for any endpoint that speaks the
+  OpenAI chat-completions format, so the base URL is the only thing that
+  changes between OpenAI, Groq, Together, DeepSeek, Ollama, LM Studio and
+  vLLM. A second class covers the Anthropic Messages API, including the two
+  places its wire format differs: the system prompt is a top-level field
+  rather than a message, and `max_tokens` is mandatory.
+- **Reliability primitives** — exponential backoff with *full jitter*, a
+  thread-safe token-bucket rate limiter, a three-state circuit breaker, and an
+  absolute deadline that the retries cannot outlive.
+- **Retries that know when to stop** — an authentication failure is never
+  retried, because a rejected key stays rejected. Neither is a malformed
+  reply or a schema violation. Only rate limits, timeouts, transport failures
+  and server errors are.
+- **A spend ceiling** — an optional limit in US dollars, checked *before* each
+  request rather than after, so a run cannot overshoot by a call it had
+  already decided not to make.
+- **Schema-constrained output** — tolerant JSON extraction from fenced
+  blocks, prose and trailing commas, plus a JSON Schema subset validator that
+  reports the exact failing path, for example `$.items[0].price`.
+- **Observability** — span tracing, token accounting, cost estimation.
+- **Offline evaluation** — golden datasets and failure-tolerant reports, so a
+  prompt change can be checked before it ships.
+
+**Zero runtime dependencies** — the core package is standard library only, so
+it installs anywhere and there are no wheels to audit. **194 tests, 96%
+coverage**, running fully offline against a fake transport, with `ruff` and
+`mypy` clean.
+
+```python
+from llm_sentry import Sentry, Settings, Message
+
+sentry = Sentry.from_settings(Settings.from_env())
+response = sentry.ask("Summarise this in one sentence.")
+print(response.text, response.usage.to_dict())
+```
+
+The test suite never touches the network, so it runs in about a tenth of a
+second and cannot flake.
+
+---
+
+### [`My-website-`](https://github.com/likharlakshya456-boop/My-website-) — HTML · CSS · JavaScript
+
+**The live website for Socialkaroo, an inbound lead-generation agency in
+Indore.**
+
+The site is the business's primary sales surface: it explains the offer, lets
+a visitor model the return on investment, captures an enquiry, and hands them
+off to WhatsApp with the details already filled in.
+
+- **Interactive ROI calculator** — the visitor picks an industry and adjusts
+  ticket value and close rate; leads, customers and monthly revenue recompute
+  live against the cost of the recommended tier.
+- **1-on-1 strategy call booking engine** — day, time slot and call-mode
+  selectors feeding a summary panel and a pre-filled WhatsApp handoff.
+- **3D depth particle canvas** on the hero, with `requestAnimationFrame`,
+  device-pixel-ratio scaling, and an `IntersectionObserver` that pauses
+  rendering when the hero scrolls out of view.
+- **Lead capture with validation** that assembles a structured message and
+  URL-encodes it into a WhatsApp link, so a name containing `&amp;` cannot
+  corrupt the message.
+- **No build step, no framework, no runtime dependency, no third-party
+  scripts** — a lead-capture page is a document, and React would add tens of
+  kilobytes and a build pipeline to solve a problem the site does not have.
+
+Also includes **Maison Noire**, a complete five-page e-commerce front end
+built as a case study: a `localStorage`-backed shopping bag with quantities
+and subtotal, category filtering, a product gallery, dark mode, and a mobile
+drawer.
+
+The repository carries its own quality gates — two dependency-free Python
+checkers that validate the HTML structure of all seven documents and resolve
+every local link, both runnable with the standard library alone. A GitHub
+Actions workflow runs them, along with a syntax check on both scripts.
+
+- **Live site:** &lt;https://likharlakshya456-boop.github.io/My-website-/&gt;
+- **Source:** &lt;https://github.com/likharlakshya456-boop/My-website-&gt;
+
+---
+
+### **Maison Noire** — HTML · CSS · JavaScript
+
+**An e-commerce front end, built as a case study.**
+
+Five pages — landing, collection, product, about and contact — built to the
+same standard as the agency site rather than as a throwaway mock-up.
+
+- A shopping bag persisted in `localStorage`, with add, remove, quantity
+  changes, a running subtotal, a badge count and a proper empty state.
+- Category filtering and a responsive product grid; a product page with an
+  image gallery, size selection and related products.
+- Dark mode with a persisted preference, a mobile drawer that closes on
+  `Escape`, and scroll-triggered reveals.
+- Accessibility handled rather than asserted: `prefers-reduced-motion` is
+  honoured in the CSS *and* in the JavaScript — the hero canvas draws a
+  single static frame, the card tilt is skipped and the funnel simulator jumps
+  straight to its final state — focus is visible via `:focus-visible`, and the
+  checkout button is honestly a stub, because there is no payment backend
+  behind the demo and it does not pretend otherwise.
+
+- **Live demo:** &lt;https://likharlakshya456-boop.github.io/My-website-/maison-noire/&gt;
+- **Source:** &lt;https://github.com/likharlakshya456-boop/My-website-/tree/main/maison-noire&gt;
+
+---
+
+## Stack
+
+**AI engineering** — Python 3.10+, `dataclasses` and `typing`, the standard
+library `urllib` transport, JSON Schema validation, pytest, `ruff`, `mypy`.
+
+**Front-end** — HTML5 semantic markup, modern CSS (custom properties,
+`clamp()`, grid, flexbox, `@media`, `:focus-visible`,
+`prefers-reduced-motion`), vanilla JavaScript with the DOM, Canvas 2D,
+`IntersectionObserver`, `matchMedia` and `localStorage`.
+
+**Tooling** — Git, GitHub Actions, GitHub Pages, the GitHub CLI, and the
+REST and GraphQL APIs.
+
+**Practices I care about** — dependency-light design, honest error handling,
+tests that run offline, and documentation that says what is *not* finished.
+
+---
+
+## Currently
+
+- Building out `llm-sentry` and looking for contributors to its provider
+  adapters and evaluation harness.
+- Exploring evaluation-driven development for LLM features — golden datasets
+  in CI, regressions caught before production.
+- Running **Socialkaroo**, where the interesting engineering problem is
+  turning local business marketing into a measurable inbound pipeline.
+
+---
+
+## Contact
+
+- **LinkedIn** — &lt;https://www.linkedin.com/in/lakshya-likhar-691630333/&gt;
+- **Email** — &lt;likharlakshya456@gmail.com&gt;
+- **GitHub** — &lt;https://github.com/likharlakshya456-boop&gt;
+
+---
+
+*Everything above is real and checkable: the code is in the repositories
+linked here, the test suite runs in CI, and the demos are live.*
+</script>
+<script type="text/plain" id="ci-source">
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: validate the static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check the HTML structure
+        run: python3 tools/check_html.py .
+
+      - name: Check that every local link resolves
+        run: python3 tools/check_links.py .
+
+      - name: Check the JavaScript syntax
+        run: |
+          node --check script.js
+          node --check maison-noire/js/script.js
+
+      - name: Check the brand asset generator still runs
+        run: python3 -c "import ast, pathlib; ast.parse(pathlib.Path('tools/render_brand.py').read_text())"
+</script>
+<script>
+(function () {
+  var source = document.getElementById('readme-source').textContent;
+  source = source.replace(/^\n/, '').replace(/\s+$/, '');
+  var status = document.getElementById('status');
+  var fallback = document.getElementById('fallback');
+  fallback.value = source;
+
+  var button = document.getElementById('copy');
+  button.addEventListener('click', function () {
+    var done = function () {
+      status.textContent = 'Copied. Paste it into the profile README editor.';
+    };
+    var failed = function () {
+      status.textContent = 'The browser refused the copy. Expand the box below and copy the text by hand.';
+      fallback.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      fallback.focus();
+      fallback.select();
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(source).then(done, failed);
+    } else {
+      failed();
+    }
+  });
+})();
+</script>
+</body>
+</html>

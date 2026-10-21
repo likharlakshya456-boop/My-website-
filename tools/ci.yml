@@ -1,0 +1,40 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: validate the static site
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check the HTML structure
+        run: python3 tools/check_html.py .
+
+      - name: Check that every local link resolves
+        run: python3 tools/check_links.py .
+
+      - name: Check the JavaScript syntax
+        run: |
+          node --check script.js
+          node --check maison-noire/js/script.js
+
+      - name: Check the brand asset generator still runs
+        run: python3 -c "import ast, pathlib; ast.parse(pathlib.Path('tools/render_brand.py').read_text())"
