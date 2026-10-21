@@ -11,9 +11,9 @@ Also includes **Maison Noire**, a complete e-commerce front-end built as a
 case study to demonstrate that the same standard of work applies beyond
 marketing pages.
 
-- **Live site:** <https://likharlakshya456-boop.github.io/socialkaroo/>
-- **Pricing one-pager:** <https://likharlakshya456-boop.github.io/socialkaroo/pricing-onepager.html>
-- **Maison Noire demo:** <https://likharlakshya456-boop.github.io/socialkaroo/maison-noire/>
+- **Live site:** <https://likharlakshya456-boop.github.io/My-website-/>
+- **Pricing one-pager:** <https://likharlakshya456-boop.github.io/My-website-/pricing-onepager.html>
+- **Maison Noire demo:** <https://likharlakshya456-boop.github.io/My-website-/maison-noire/>
 
 ---
 
@@ -142,7 +142,7 @@ does not pretend otherwise.
 There is nothing to install. Any static file server will do:
 
 ```bash
-git clone https://github.com/likharlakshya456-boop/socialkaroo.git
+git clone https://github.com/likharlakshya456-boop/My-website-.git
 cd socialkaroo
 python3 -m http.server 8000
 ```
