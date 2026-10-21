@@ -143,7 +143,7 @@ There is nothing to install. Any static file server will do:
 
 ```bash
 git clone https://github.com/likharlakshya456-boop/My-website-.git
-cd socialkaroo
+cd My-website-
 python3 -m http.server 8000
 ```
 
